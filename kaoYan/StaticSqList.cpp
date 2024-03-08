@@ -37,6 +37,7 @@ void deleteSqList(SqList &L, int i)
     {
         L.data[i] = L.data[i + 1];
     }
+    //TODO:最后一个元素修改为0
     L.initLength--;
     printf("delete successed\n");
 }
