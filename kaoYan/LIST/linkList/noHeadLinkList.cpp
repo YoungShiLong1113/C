@@ -1,8 +1,9 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+// 不带头节点
 typedef struct LNode
-{                       // 定义节点
-    int data;           // 数据域
+{                // 定义节点
+    int data;    // 数据域
     LNode *next; // 指针域 结构体自身的指针
 } LNode, *linkList;
 
