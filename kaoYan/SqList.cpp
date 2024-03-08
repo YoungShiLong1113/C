@@ -8,7 +8,7 @@ typedef struct
 }SqList;
 
 // 初始化
-int InitSqList(SqList &L)
+void InitSqList(SqList &L)
 {
 
     for (int i = 1; i < MaxSize; i++)
@@ -19,7 +19,7 @@ int InitSqList(SqList &L)
 }
 
 // 增
-int insertSqList(SqList &L, int i, int j)
+void insertSqList(SqList &L, int i, int j)
 { // 在i处增加j
     for (int k=L.initLength; k >=i;k--)
     {
@@ -27,10 +27,11 @@ int insertSqList(SqList &L, int i, int j)
     }
     L.data[i] = j;
     L.initLength++;
+    printf("insert successful");
 }
 
 // 删
-int deleteSqList(SqList &L, int i)
+void deleteSqList(SqList &L, int i)
 { // 删除i处的值
     for (int j = L.initLength; j > i;j--)
     {
@@ -40,7 +41,7 @@ int deleteSqList(SqList &L, int i)
 }
 
 //改
-int updataSqList(SqList &L,int i,int j)//将i处的值改为j
+void updataSqList(SqList &L,int i,int j)//将i处的值改为j
 {
     if(i>MaxSize||i<0)
     {
@@ -53,9 +54,21 @@ int updataSqList(SqList &L,int i,int j)//将i处的值改为j
 }
 
 //查
-int searchSqList(SqList L,int i){
+void searchSqList(SqList L,int i){
     //查找第i-1个值
     printf("%d\n", L.data[i]);
+}
+
+//销
+
+
+//打印
+void displaySqList(SqList L)
+{
+    for (int i = 0; i < L.initLength;i++)
+    {
+        printf("%d\n", L.data[i]);
+    }
 }
 
 int main()
@@ -63,6 +76,8 @@ int main()
     SqList L;
 
     InitSqList(L);
+    insertSqList(L, 1, 2);
+    displaySqList(L);
 
     return 0;
 }
