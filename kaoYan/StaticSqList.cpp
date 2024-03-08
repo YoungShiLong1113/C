@@ -27,7 +27,7 @@ void insertSqList(SqList &L, int i, int j)
     }
     L.data[i] = j;
     L.initLength++;
-    printf("insert successful");
+    printf("insert successful\n");
 }
 
 // 删
@@ -38,19 +38,15 @@ void deleteSqList(SqList &L, int i)
         L.data[i] = L.data[i + 1];
     }
     L.initLength--;
+    printf("delete successed\n");
 }
 
 //改
+//TODO:修改值逻辑有误
 void updataSqList(SqList &L,int i,int j)//将i处的值改为j
 {
-    if(i>MaxSize||i<0)
-    {
-        printf("error");
-    }
-    else{
-        L.data[i] = j;
-    }
-   
+    L.data[i] = j;
+    printf("updata success\n");
 }
 
 //查
@@ -77,6 +73,9 @@ int main()
 
     InitSqList(L);
     insertSqList(L, 1, 2);
+    insertSqList(L, 2, 3);
+    displaySqList(L);
+    deleteSqList(L, 1);
     displaySqList(L);
 
     return 0;
